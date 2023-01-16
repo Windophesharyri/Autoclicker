@@ -47,7 +47,7 @@ if __name__ == "__main__":
                 if keyboard.is_pressed(user_entry_proc.get()):
                     pyautogui.tripleClick()     
                 if keyboard.is_pressed(user_entry_proc_1.get()):
-                    break
+                    proccess_frame.destroy()
 
         gui.withdraw()
         proccess_frame = Toplevel(gui)
