@@ -67,13 +67,13 @@ if __name__ == "__main__":
         
         def validate(P):
             if len(P) == 0:
-                True
-            elif len(P) < 1:
-                True
+                return True
+            elif len(P) < 2:
+                return True
             else:
-                False
+                return False
                 
-        vcmd = (proccess_frame(validate), '%P')
+        vcmd = (proccess_frame.register(validate), '%P')
         label_proc = Label(frame_proc, text = text_proc, justify = "center", wraplength=300, background = "black", foreground = "white", font = "KacstDigital, 16", padx = 20 )
         label_proc.pack()
         label_proc = Label(frame_proc, text = text_proc1, justify = "center", wraplength=300, background = "black", foreground = "white", font = "KacstDigital, 12" )
@@ -85,11 +85,11 @@ if __name__ == "__main__":
         user_text = StringVar()
         user_label_entry = Label(frame_proc, text = "Поставить клавишу начала", justify = "center", wraplength=300, background = "black", foreground = "white", font = "KacstDigital, 10" )
         user_label_entry.pack()
-        user_entry_proc = Entry(frame_proc, textvariable = string,bg = "white", fg = "black", font = "KacstDigital, 15", width = 2, validate = "key", validatecommnand = vcmd)
+        user_entry_proc = Entry(frame_proc, bg = "white", fg = "black", font = "KacstDigital, 15", width = 2, validate = "key", validatecommand = vcmd)
         user_entry_proc.pack(padx = 5, pady = 5)
         user_label_entry_1 = Label(frame_proc, text = "Поставить клавишу паузы", justify = "center", wraplength=300, background = "black", foreground = "white", font = "KacstDigital, 10" )
         user_label_entry_1.pack()
-        user_entry_proc_1 = Entry(frame_proc, textvariable = string1 , bg = "white", fg = "black", font = "KacstDigital, 15", width = 2 validate = "key", validatecommnand = vcmd)
+        user_entry_proc_1 = Entry(frame_proc, bg = "white", fg = "black", font = "KacstDigital, 15", width = 2, validate = "key", validatecommand = vcmd)
         user_entry_proc_1.pack(padx = 5, pady = 5)
         user_entry_button = Button(frame_proc, text="Поставить бинды", height = 3, font = "KacstDigital, 12", background = "black", foreground = "white", relief= "groove", bd = 4, pady = 3)
         user_entry_button.pack()
